@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QCheckBox, QMessageBox
 from PySide6.QtCore import Qt
 from ui_app_tareas import Ui_tareas
-
 class Tareas(QWidget, Ui_tareas):
     def __init__(self):
         super().__init__()
