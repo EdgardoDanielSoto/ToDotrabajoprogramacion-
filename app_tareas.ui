@@ -236,7 +236,37 @@ background-color: rgb(46, 194, 126);
     <string>Completada</string>
    </property>
   </widget>
+  <widget class="QLabel" name="imagen_logo">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(51, 209, 122);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../pestaña.png</pixmap>
+   </property>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>ingreso_texto_tarea</tabstop>
+  <tabstop>boton_agregar</tabstop>
+  <tabstop>boton_modificar</tabstop>
+  <tabstop>boton_completada</tabstop>
+  <tabstop>boton_eliminar</tabstop>
+  <tabstop>area_de_lista</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
+ <slots>
+  <slot>Ui__tareas__eliminar_tarea()</slot>
+ </slots>
 </ui>

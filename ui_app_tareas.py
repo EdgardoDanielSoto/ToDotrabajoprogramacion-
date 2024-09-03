@@ -106,6 +106,16 @@ class Ui_tareas(object):
         self.boton_completada.setStyleSheet(u"background-color: rgb(143, 240, 164);\n"
 "\n"
 "")
+        self.imagen_logo = QLabel(tareas)
+        self.imagen_logo.setObjectName(u"imagen_logo")
+        self.imagen_logo.setGeometry(QRect(260, 10, 71, 31))
+        self.imagen_logo.setStyleSheet(u"color: rgb(51, 209, 122);")
+        self.imagen_logo.setPixmap(QPixmap(u"../pesta\u00f1a.png"))
+        QWidget.setTabOrder(self.ingreso_texto_tarea, self.boton_agregar)
+        QWidget.setTabOrder(self.boton_agregar, self.boton_modificar)
+        QWidget.setTabOrder(self.boton_modificar, self.boton_completada)
+        QWidget.setTabOrder(self.boton_completada, self.boton_eliminar)
+        QWidget.setTabOrder(self.boton_eliminar, self.area_de_lista)
 
         self.retranslateUi(tareas)
 
@@ -121,5 +131,6 @@ class Ui_tareas(object):
         self.pregunta_quehacer.setText(QCoreApplication.translate("tareas", u"\u00bfQue hay que hacer?", None))
         self.ingreso_texto_tarea.setPlaceholderText(QCoreApplication.translate("tareas", u"Ingrese aqu\u00ed la tarea", None))
         self.boton_completada.setText(QCoreApplication.translate("tareas", u"Completada", None))
+        self.imagen_logo.setText("")
     # retranslateUi
 
