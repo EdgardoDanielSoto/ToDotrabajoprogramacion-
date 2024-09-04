@@ -14,8 +14,8 @@ class Tareas(QWidget, Ui_tareas):
 
     def boton_agregar_clicked(self):
         texto_tarea = self.ingreso_texto_tarea.toPlainText()
-        if len(texto_tarea) > 50:
-            self.mostrar_advertencia("La tarea no puede exceder los 50 caracteres.")
+        if len(texto_tarea) > 55:
+            self.mostrar_advertencia("La tarea no puede exceder los 55 caracteres.")
         elif texto_tarea:
             self._scroll_layout.addWidget(QCheckBox(texto_tarea))
             self.ingreso_texto_tarea.clear()
