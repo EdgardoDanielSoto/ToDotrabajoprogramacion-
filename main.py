@@ -2,9 +2,9 @@ import sys
 from PySide6.QtWidgets import QApplication
 from app_tareas import Tareas
 
-app = QApplication(sys.argv)
+aplicacion = QApplication(sys.argv)
 
-window = Tareas()
-window.show()
+ventana = Tareas()
+ventana.show()
 
-app.exec()
+aplicacion.exec()

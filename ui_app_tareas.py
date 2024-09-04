@@ -17,6 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QPushButton, QScrollArea,
     QSizePolicy, QTextEdit, QWidget)
+import logotareas_rc
 
 class Ui_tareas(object):
     def setupUi(self, tareas):
@@ -106,11 +107,11 @@ class Ui_tareas(object):
         self.boton_completada.setStyleSheet(u"background-color: rgb(143, 240, 164);\n"
 "\n"
 "")
-        self.imagen_logo = QLabel(tareas)
-        self.imagen_logo.setObjectName(u"imagen_logo")
-        self.imagen_logo.setGeometry(QRect(260, 10, 71, 31))
-        self.imagen_logo.setStyleSheet(u"color: rgb(51, 209, 122);")
-        self.imagen_logo.setPixmap(QPixmap(u"../pesta\u00f1a.png"))
+        self.logo_imagen = QLabel(tareas)
+        self.logo_imagen.setObjectName(u"logo_imagen")
+        self.logo_imagen.setGeometry(QRect(270, 10, 51, 41))
+        self.logo_imagen.setStyleSheet(u"border-image: url(:/cct/descarga.png);\n"
+"border -radius: 20px")
         QWidget.setTabOrder(self.ingreso_texto_tarea, self.boton_agregar)
         QWidget.setTabOrder(self.boton_agregar, self.boton_modificar)
         QWidget.setTabOrder(self.boton_modificar, self.boton_completada)
@@ -118,6 +119,10 @@ class Ui_tareas(object):
         QWidget.setTabOrder(self.boton_eliminar, self.area_de_lista)
 
         self.retranslateUi(tareas)
+        self.boton_agregar.clicked.connect(tareas.boton_agregar_clicked)
+        self.boton_modificar.clicked.connect(tareas.boton_modificar_clicked)
+        self.boton_completada.clicked.connect(tareas.boton_completar_clicked)
+        self.boton_eliminar.clicked.connect(tareas.boton_eliminar_clicked)
 
         QMetaObject.connectSlotsByName(tareas)
     # setupUi
@@ -131,6 +136,6 @@ class Ui_tareas(object):
         self.pregunta_quehacer.setText(QCoreApplication.translate("tareas", u"\u00bfQue hay que hacer?", None))
         self.ingreso_texto_tarea.setPlaceholderText(QCoreApplication.translate("tareas", u"Ingrese aqu\u00ed la tarea", None))
         self.boton_completada.setText(QCoreApplication.translate("tareas", u"Completada", None))
-        self.imagen_logo.setText("")
+        self.logo_imagen.setText("")
     # retranslateUi
 

@@ -236,23 +236,21 @@ background-color: rgb(46, 194, 126);
     <string>Completada</string>
    </property>
   </widget>
-  <widget class="QLabel" name="imagen_logo">
+  <widget class="QLabel" name="logo_imagen">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>270</x>
      <y>10</y>
-     <width>71</width>
-     <height>31</height>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(51, 209, 122);</string>
+    <string notr="true">border-image: url(:/cct/descarga.png);
+border -radius: 20px</string>
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../pestaña.png</pixmap>
    </property>
   </widget>
  </widget>
@@ -264,9 +262,79 @@ background-color: rgb(46, 194, 126);
   <tabstop>boton_eliminar</tabstop>
   <tabstop>area_de_lista</tabstop>
  </tabstops>
- <resources/>
- <connections/>
+ <resources>
+  <include location="logotareas.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>boton_agregar</sender>
+   <signal>clicked()</signal>
+   <receiver>tareas</receiver>
+   <slot>boton_agregar_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>38</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boton_modificar</sender>
+   <signal>clicked()</signal>
+   <receiver>tareas</receiver>
+   <slot>boton_modificar_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boton_completada</sender>
+   <signal>clicked()</signal>
+   <receiver>tareas</receiver>
+   <slot>boton_completar_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boton_eliminar</sender>
+   <signal>clicked()</signal>
+   <receiver>tareas</receiver>
+   <slot>boton_eliminar_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
-  <slot>Ui__tareas__eliminar_tarea()</slot>
+  <slot>boton_agregar_clicked()</slot>
+  <slot>boton_modificar_clicked()</slot>
+  <slot>boton_completar_clicked()</slot>
+  <slot>boton_eliminar_clicked()</slot>
  </slots>
 </ui>
