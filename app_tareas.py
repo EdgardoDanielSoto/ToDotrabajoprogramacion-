@@ -14,8 +14,8 @@ class Tareas(QWidget, Ui_tareas):
 
     def boton_agregar_clicked(self):
         texto_tarea = self.ingreso_texto_tarea.toPlainText()
-        if len(texto_tarea) > 30:
-            self.mostrar_advertencia("La tarea no puede exceder los 20 caracteres.")
+        if len(texto_tarea) > 50:
+            self.mostrar_advertencia("La tarea no puede exceder los 50 caracteres.")
         elif texto_tarea:
             self._scroll_layout.addWidget(QCheckBox(texto_tarea))
             self.ingreso_texto_tarea.clear()
@@ -32,10 +32,12 @@ class Tareas(QWidget, Ui_tareas):
 
     def boton_eliminar_clicked(self):
         for lista in range(self._scroll_layout.count()):
-            widget = self._scroll_layout.itemAt(lista).widget()
-            if QCheckBox and widget.isChecked():
-                self._scroll_layout.removeWidget(widget)
-                widget.deleteLater()
+            item = self._scroll_layout.itemAt(lista)
+            if item is not None:
+                widget = item.widget()
+                if  QCheckBox and widget.isChecked():
+                    self._scroll_layout.removeWidget(widget)
+                    widget.deleteLater()
 
     def boton_completar_clicked(self):
         for lista in range(self._scroll_layout.count()):
@@ -47,3 +49,5 @@ class Tareas(QWidget, Ui_tareas):
 
     def mostrar_advertencia(self, mensaje):
         QMessageBox.warning(self, "Error", mensaje)
+
+
