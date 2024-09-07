@@ -119,10 +119,10 @@ class Ui_tareas(object):
         QWidget.setTabOrder(self.boton_eliminar, self.area_de_lista)
 
         self.retranslateUi(tareas)
-        self.boton_agregar.clicked.connect(tareas.boton_agregar_clicked)
-        self.boton_modificar.clicked.connect(tareas.boton_modificar_clicked)
-        self.boton_completada.clicked.connect(tareas.boton_completar_clicked)
-        self.boton_eliminar.clicked.connect(tareas.boton_eliminar_clicked)
+        self.boton_agregar.clicked.connect(tareas._Tareas__boton_agregar_clicked)
+        self.boton_modificar.clicked.connect(tareas._Tareas__boton_modificar_clicked)
+        self.boton_completada.clicked.connect(tareas._Tareas__boton_completar_clicked)
+        self.boton_eliminar.clicked.connect(tareas._Tareas__boton_eliminar_clicked)
 
         QMetaObject.connectSlotsByName(tareas)
     # setupUi
